@@ -1,0 +1,71 @@
+<ion-view view-title="{{'PASSES.TITLE' | translate}}" class="passes-view" hide-back-button="true">
+  <ion-content>
+    <div ng-if="isWrongToken" class="padding text-center">
+      <h3>
+        {{'ERRORS.SINGLE-PASS-EXPIRED' | translate}}
+      </h3>
+      <a href="/" class="button button-positive button-block">Login to your Lightpass</a>
+    </div>
+
+    <div ng-if="!isWrongToken">
+      <div class="box passes-list row text-center" ng-if="passes.length > 1 || searchActiveState">
+        <!-- if end is before now or (weird case every) if now is before end and start is after now but next period start is before now, do not show! 
+          TODO: put this in a function!
+        -->
+        <a class="pass-thumb tab-item col" ng-class="{active: activePass == p.passId}" ng-repeat="p in passes" ng-if="showPassToUser(p)" href="#/passes/{{p.passId}}" ng-click="onPassClick()">
+          
+          <div class="pass-icon">
+              <i class="lpi-{{parsePassIcons(p.door.doorType)}}"></i>
+              
+          </div>
+          <div>
+            {{p.door.name}}
+          </div>
+          
+        </a>
+        <div class="no-passes-message padding" ng-if="!passes.length">
+          {{'SEARCH.NO-PASSES-FOUND' | translate:{query: searchQuery} }}
+        </div>
+      </div>
+
+      <div class="passes-content padding">
+        <div class="text-center">
+          <div class="door-type-heading">
+            <i class="lpi-{{parsePassIcons(door.doorType)}}"></i>
+          </div>
+          <h3 class="pass-title">{{door.name}}</h3>
+          <div class="pass-title-address">
+            {{building.location.address}}
+          </div>
+
+          <div class="pass-blurb">
+            <span expired-or-expires data-expiration="{{pass.passInfo.validity.total.end}}" building-timezone="{{building.location.timeZone}}"></span>
+          </div>
+
+          <div class="secondary-buttons">
+            <a href="#/passCamera/{{pass.id}}" class="pass-icon-link positive" id="blinker-element" ng-if="door.hasCamera && canAccessCamera">
+              <i class="ion-ios-videocam"></i>
+            </a>
+            <a href="#/passManage/{{pass.id}}" ng-if="canIssue" class="pass-icon-link positive" id="blinker-element">
+              <i class="ion-ios-people"></i>
+            </a>
+            <a href="#/passes/{{pass.id}}/details" ng-if="canViewDetails" class="pass-icon-link positive" id="blinker-element">
+              <i class="ion-ios-more"></i>
+            </a>
+          </div>
+        </div>
+
+        <div ng-if="blinkerIsEnabled">
+          <div ng-click="onToggleButtonClick()" class="blinker-button button-circle button-balanced button-float button" id="blinker-element">
+          </div>
+        </div>
+        <div ng-if="!blinkerIsEnabled">
+              <div class="blinker-button button-circle button-balanced button-float button disabled" id="blinker-disabled-element">
+              </div>
+              <div class="pass-invalid-message text-center">
+                {{'PASS-DETAIL.WILL-BE-VALID-FROM' | translate:{validFrom: getNextPeriodStartDate(pass, building), creationTime: getNextPeriodStartTime(pass, building) } }}
+              </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

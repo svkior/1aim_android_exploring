@@ -1,0 +1,85 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-stable" align-title="center">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <div class="bar bar-header item-input-inset search-bar" ng-if="searchActiveState">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="{{'SEARCH.PLACEHOLDER' | translate}}" id="search-input" ng-model="search.query">
+        </label>
+        <button class="button button-clear" ng-click="toggleSearch()">
+          {{'SEARCH.DONE' | translate}}
+        </button>
+      </div>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-search" ng-if="showSearch && currentAccount.passes.length > 1" ng-click="toggleSearch()"></button>
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <div id="root-spinner">
+      <div class="spin-wrapper">
+        <li class="sk-chasing-dots">
+          <div class="sk-child"></div>
+          <div class="sk-dot2"></div>
+        </li>
+      </div>
+    </div>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="right">
+    <ion-content>
+      <div class="menu-header padding" ng-click="toggleAccountsMenu()">
+        <img class="lightpass-logo" src="assets/img/lightpass-logo.png" alt="" />
+        <div class="row">
+
+          <div class="provider-info col col-90">
+            <h3 class="provider-name">
+              {{currentAccount.providers[0].name}}
+            </h3>
+            <div class="account-name">
+              {{currentAccount.userInfo.name}} <small>{{currentAccount.userInfo.email}}</small>
+            </div>
+          </div>
+          <i ng-if="!isWebSession" ng-class="{'ion-arrow-down-b': !isAccountsMenuActive, 'ion-arrow-up-b': isAccountsMenuActive}" class="col"></i>
+        </div>
+
+      </div>
+
+      <ion-list >
+        <!-- Accounts menu -->
+        <div ng-if="isAccountsMenuActive">
+          <ion-item menu-close ng-repeat="account in accounts" ng-click="changeAccount(account.userId)">
+            {{account.fullDataSet.providers[0].name}}
+          </ion-item>
+        </div>
+
+        <!-- Normal menu -->
+        <div ng-if="!isAccountsMenuActive">
+          <ion-item menu-close href="#/passes">
+            {{'MENU.LIGHTPASSES' | translate}}
+          </ion-item>
+          <ion-item menu-close href="#/profile">
+            {{'MENU.SETTINGS' | translate}}
+          </ion-item>
+          <ion-item menu-close href="#/login" ng-if="!isWebSession">
+            {{'MENU.ADD-ACCOUNT' | translate}}
+          </ion-item>
+
+          <div class="item-menu-down">
+            <ion-item menu-close ng-click="logout()" class="item item-icon-left">
+              {{'MENU.LOG-OUT' | translate}} {{currentAccount.providers[0].name}}
+              <i class="icon ion-log-out"></i>
+            </ion-item>
+          </div>
+        </div>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

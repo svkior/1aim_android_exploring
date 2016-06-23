@@ -1,0 +1,20 @@
+<ion-view view-title="{{'LOGIN.TITLE' | translate}}" hide-nav-bar="{{!hasAccounts}}">
+  <ion-content class="">
+    <div class="bar bar-header bar-relative" ng-if="!hasAccounts">
+      <div class="h1 title">{{'LOGIN.TITLE' | translate}}</div>
+    </div>
+    <div class="padding">
+      <div class="list ">
+        <label class="item item-input">
+          <span class="input-label">{{'LOGIN.EMAIL' | translate}}</span>
+          <input type="email" ng-model="loginModel.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">{{'LOGIN.PASSWORD' | translate}}</span>
+          <input type="password" ng-model="loginModel.password">
+        </label>
+      </div>
+      <button class="button button-block button-positive activated" ng-click="login()">{{'LOGIN.BUTTON' | translate}}</button>
+    </div>
+  </ion-content>
+</ion-view>

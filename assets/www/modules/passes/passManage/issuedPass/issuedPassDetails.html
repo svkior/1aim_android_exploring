@@ -1,0 +1,35 @@
+<ion-view view-title="{{'PASS-DETAIL.ISSUED-PASS-TITLE' | translate}}" class="passes-view pass-details-view">
+  <ion-content class="padding">
+    <div class="pass-detail-header">
+      <div class="door-type-heading">
+        <i class="lpi-{{parsePassIcons(issuedPass.passData.door.doorType)}}"></i>
+      </div>
+      <h4>{{issuedPass.issuedPass.alias || issuedPass.recipientInfo.name}}</h2>
+    </div>
+
+    <div class="list card">
+      <div class="item">
+        <p>
+          {{'PASS-DETAIL.ISSUED-TO' | translate: {name: issuedPass.recipientInfo.name} }}
+        </p>
+        <p>
+          {{'PASS-DETAIL.CAN-ACCESS' | translate: {door: issuedPass.passData.door.name} }}
+        </p>
+        <p ng-if="issuedPass.issuedPass.humanReadableTimeRestrictions">
+          {{'PASS-DETAIL.RESTRICTIONS' | translate:{restrictions: issuedPass.issuedPass.humanReadableTimeRestrictions} }}
+        </p>
+        <p>
+          {{'PASS-DETAIL.VALID-FROM' | translate:{validFrom: moment(issuedPass.issuedPass.validity.start).format('D MMM YYYY') } }}
+        </p>
+        <p>
+          <span expired-or-expires data-expiration="{{issuedPass.issuedPass.validity.end}}"></span>
+        </p>
+        <p>
+          {{'PASS-DETAIL.ISSUED-BY' | translate:{name: issuedPass.issuerInfo.name, creationTime: moment(issuedPass.issuedPass.creationTime).format('D MMM YYYY')} }}
+        </p>
+      </div>
+    </div>
+
+    <button class="button button-assertive button-block" ng-click="removePass()">{{'PASS-DETAIL.REMOVE-BUTTON' | translate}}</button>
+  </ion-content>
+</ion-view>

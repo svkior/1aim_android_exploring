@@ -1,0 +1,86 @@
+{
+  "MENU": {
+    "LIGHTPASSES": "Your LightPasses",
+    "SETTINGS": "Settings",
+    "ADD-ACCOUNT": "Add Account",
+    "LOG-OUT": "Log out"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "BUTTON": "Sign in"
+  },
+  "PASSES": {
+    "TITLE": "LIGHTPASS",
+    "EXPIRES-AT": "Expires at {{date}}",
+    "EXPIRED-AT": "Expired at {{date}}"
+  },
+  "CAMERA": {
+    "TITLE": "Camera"
+  },
+  "PASS-DETAIL": {
+    "TITLE": "Pass Details",
+    "ISSUED-PASS-TITLE": "Pass Details",
+    "ISSUED-BY": "Issued by {{name}} at {{creationTime}}",
+    "RESTRICTIONS": "Restrictions: {{restrictions}}",
+    "VALID-FROM": "Valid from {{validFrom}}",
+    "WILL-BE-VALID-FROM": "This LightPass will be valid from {{validFrom}} at {{creationTime}}",
+    "ISSUED-TO": "Issued to {{name}}",
+    "CAN-ACCESS": "Can access {{door}}",
+    "REMOVE-BUTTON": "Remove Pass",
+    "REMOVE-PASS-POPUP-TITLE": "Remove Pass",
+    "REMOVE-PASS-POPUP-BLURB": "Are you sure you want to remove this pass?"
+  },
+  "PASS-MANAGE": {
+    "TITLE": "Issue LightPasses",
+    "NO-ISSED-PASSES-MSG": "To issue new passes click the <i class='ion-plus'></i> button below"
+  },
+  "ISSUE-PASS": {
+    "TITLE": "Issue Pass",
+    "USER-DETAILS": "User Details",
+    "IMPORT-CONTACT": "Import contact",
+    "FULL-NAME": "Full Name",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "PASS-DETAILS": "Pass Details",
+    "PASS-NAME": "Pass Name",
+    "PASS-NAME-PLACEHOLDER": "Pass Name (e.g. Max visit)",
+    "VALID-FROM": "Valid from",
+    "EXPIRES": "Expires at",
+    "PASS-PERMISSIONS": "Pass permissions",
+    "PERMANENT-PASS": "Permanent pass",
+    "CAN-ISSUE": "Allow issue to others",
+    "PASS-ADMIN": "Pass administrator",
+    "SUBMIT-BUTTON": "Add Pass"
+  },
+  "DATEPICKER": {
+    "TITLE": "Select Date",
+    "TODAY": "Today",
+    "SET": "Set",
+    "CLOSE": "Close"
+  },
+  "ERRORS": {
+    "PROBLEM-TITLE": "We've got a problem",
+    "WRONG-LOGIN": "Please check your email and password are correct and make sure your device is connected to the internet.",
+    "NEW-PASS-ERROR": "Please check the details you've entered are correct and your internet connection.",
+    "CAMERA-ERROR": "Seems like the door's camera isn't available at the moment.",
+    "SINGLE-PASS-EXPIRED": "Sorry, this pass has expired."
+  },
+  "SETTINGS": {
+    "TITLE": "Settings",
+    "YOUR-INFORMATION": "Your Information",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "ACCOUNT-TYPE": "Account Type",
+    "LIGHTPASS-SETTING": "LightPass Settings",
+    "LANGUAGE" : "Language",
+    "BLUETOOTH": "Bluetooth auto detection",
+    "SILENT-RING": "Silent Ringing"
+  },
+  "SEARCH": {
+    "NO-PASSES-FOUND": "No passes found named {{query}}",
+    "PLACEHOLDER": "Search",
+    "DONE": "Done"
+  }
+}

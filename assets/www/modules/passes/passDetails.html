@@ -1,0 +1,30 @@
+<ion-view view-title="{{'PASS-DETAIL.TITLE' | translate}}" class="passes-view pass-details-view">
+  <ion-content class="passes-content padding">
+    <div class="pass-detail-header">
+      <div class="door-type-heading">
+        <i class="lpi-{{parsePassIcons(data.door.doorType)}}"></i>
+      </div>
+      <h3 class="pass-title">{{data.door.name}}</h3>
+      <div class="pass-title-address">
+        {{data.building.location.address}}
+      </div>
+    </div>
+    <div class="list card">
+      <div class="item">
+        <p ng-if="data.pass.passInfo.humanReadableTimeRestrictions">
+          {{'PASS-DETAIL.RESTRICTIONS' | translate:{restrictions: data.pass.passInfo.humanReadableTimeRestrictions} }}
+        </p>
+        <p ng-if="data.pass.passInfo.validity.total.start">
+          {{'PASS-DETAIL.VALID-FROM' | translate:{validFrom: moment(data.pass.passInfo.validity.total.start).format('D MMM YYYY') } }}
+        </p>
+        <p ng-if="data.pass.passInfo.validity.total.end">
+          <span expired-or-expires data-expiration="{{data.pass.passInfo.validity.total.end}}" building-timezone={{data.building.location.timeZone}}></span>
+        </p>
+        <p ng-if="data.issuerInfo">
+          {{'PASS-DETAIL.ISSUED-BY' | translate:{name: data.issuerInfo.name, creationTime: moment(data.pass.passInfo.creationTime).format('D MMM YYYY')} }}
+        </p>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

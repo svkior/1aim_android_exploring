@@ -1,0 +1,15 @@
+<ion-view view-title="{{'PASS-MANAGE.TITLE' | translate}}" class="pass-assign-view">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item" ng-repeat='issuedPass in issuedPasses' ng-click="goToIssuedPassDetails(issuedPass)">
+        {{issuedPass.issuedPass.alias || issuedPass.recipientInfo.name}}
+      </ion-item>
+    </ion-list>
+    <div ng-if="issuedPasses.length === 0" class="padding" translate="{{'PASS-MANAGE.NO-ISSED-PASSES-MSG'}}">
+
+    </div>
+  </ion-content>
+  <a href="#/passManage/{{currentPass.passId}}/issueNewPass/{{timezone}}" class="button button-circle button-positive button-float">
+    <i class="ion-plus"></i>
+  </a>
+</ion-view>

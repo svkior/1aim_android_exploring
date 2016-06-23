@@ -1,0 +1,16 @@
+<ion-view view-title="{{'CAMERA.TITLE' | translate}}" class="passes-view pass-camera-view">
+  <ion-content class="padding">
+    <div class="pass-detail-header">
+      <div class="door-type-heading">
+        <i class="lpi-{{parsePassIcons(data.door.doorType)}}"></i>
+      </div>
+      <h3 class="pass-title">{{data.door.name}}</h3>
+      <div class="pass-title-address">
+        {{data.building.location.address}}
+      </div>
+    </div>
+    <div id="video-container">
+      <video id="remote-video" class="remote-video" autoplay ></video>
+    </div>
+  </ion-content>
+</ion-view>

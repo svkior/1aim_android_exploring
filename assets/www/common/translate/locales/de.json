@@ -1,0 +1,86 @@
+{
+  "MENU": {
+    "LIGHTPASSES": "Ihre LightPasses",
+    "SETTINGS": "Einstellungen",
+    "LOG-OUT": "Abmelden",
+    "ADD-ACCOUNT": "Konto hinzufügen"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "PASSWORD": "Passwort",
+    "BUTTON": "Anmelden"
+  },
+  "PASSES": {
+    "TITLE": "LIGHTPASS ",
+    "EXPIRES-AT": "Gültig bis {{date}}",
+    "EXPIRED-AT": "Ungültig seit {{date}}"
+  },
+  "CAMERA": {
+    "TITLE": "Kamera"
+  },
+  "PASS-DETAIL": {
+    "TITLE": "Pass Details",
+    "ISSUED-PASS-TITLE": "Pass Details",
+    "ISSUED-BY": "Ausgestellt von {{name}} am {{creationTime}}",
+    "RESTRICTIONS": "Restriktionen: {{restrictions}}",
+    "VALID-FROM": "Gültig ab {{validFrom}}",
+    "WILL-BE-VALID-FROM": "Dieser LightPass wird gültig sein ab {{validFrom}} um {{creationTime}}",
+    "ISSUED-TO": "Ausgestellt an {{name}}",
+    "CAN-ACCESS": "Hat Zugang zu {{door}}",
+    "REMOVE-BUTTON": "Pass löschen",
+    "REMOVE-PASS-POPUP-TITLE": "Pass löschen",
+    "REMOVE-PASS-POPUP-BLURB": "Sind Sie sich sicher, dass Sie den Pass löschen möchten?"
+  },
+  "PASS-MANAGE": {
+    "TITLE": "LightPasses erstellen",
+    "NO-ISSED-PASSES-MSG": "Um neue LightPasses zu erstellen, drücken Sie <i class='ion-plus'></i>"
+  },
+  "ISSUE-PASS": {
+    "TITLE": "Pass erstellen",
+    "USER-DETAILS": "User Informationen",
+    "IMPORT-CONTACT": "Kontakt importieren",
+    "FULL-NAME": "Vor- und Nachname",
+    "EMAIL": "Email",
+    "PHONE": "Telefon",
+    "PASS-DETAILS": "Pass Informationen",
+    "PASS-NAME": "Pass Name",
+    "PASS-NAME-PLACEHOLDER": "Pass Name (z.B. Besuch von Max)",
+    "VALID-FROM": "Gültig ab",
+    "EXPIRES": "Gültig bis",
+    "PASS-PERMISSIONS": "Pass Berechtigungen",
+    "PERMANENT-PASS": "Permanenter Pass",
+    "CAN-ISSUE": "Weitergabe an Dritte",
+    "PASS-ADMIN": "Pass Administrator",
+    "SUBMIT-BUTTON": "Pass hinzufügen"
+  },
+  "DATEPICKER": {
+    "TITLE": "Datum wählen",
+    "TODAY": "Heute",
+    "SET": "Auswählen",
+    "CLOSE": "Schließen"
+  },
+  "ERRORS": {
+    "PROBLEM-TITLE": "Es gibt ein Problem",
+    "WRONG-LOGIN": "Bitte überprüfen Sie die eigegebene Email Adresse, das Passwort und stellen Sie sicher, dass Sie mit dem Internet verbunden sind.",
+    "NEW-PASS-ERROR": "Bitte überprüfen Sie die eingegebenen Daten und stellen Sie sicher, dass Sie mit dem Internet verbunden sind.",
+    "CAMERA-ERROR": "Es kann momentan keine Verbindung zur Kamera hergestellt werden.",
+    "SINGLE-PASS-EXPIRED": "Dieser Pass ist leider abgelaufen."
+  },
+  "SETTINGS": {
+    "TITLE": "Optionen",
+    "YOUR-INFORMATION": "Ihre Informationen",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "ACCOUNT-TYPE": "Konto Typ",
+    "LIGHTPASS-SETTING": "LightPass Einstellungen",
+    "LANGUAGE" : "Sprache",
+    "BLUETOOTH": "Bluetooth Erkennung",
+    "SILENT-RING": "Lautlos klingeln"
+  },
+  "SEARCH": {
+    "NO-PASSES-FOUND": "Kein lightpass namens {{query}} gefunden",
+    "PLACEHOLDER": "Suchen",
+    "DONE": "Fertig"
+  }
+}

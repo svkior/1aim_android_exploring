@@ -1,0 +1,40 @@
+<ion-view view-title="Someone is at the door" hide-nav-bar="true" class="ring-view">
+  <ion-content class="padding">
+    <div class="ring-dialog" >
+      <div class="ring-dialog-header" ng-class="{hidden: callState}">
+        <div class="icon-wrapper">
+          <i class="lpi-{{parsePassIcons(door.doorType)}}"></i>
+        </div>
+        <div class="ring-label text-center">
+          Someone is at the door
+        </div>
+        <h2 class="text-center">{{door.name}}</h2>
+      </div>
+
+      <div id="video-container" ng-class="{hidden: !callState}">
+        <video id="remote-video" autoplay ></video>
+      </div>
+
+      <button class="button button-light button-block" ng-click="answer()" ng-class="{hidden: callState}" ng-if="door.hasCamera == true">
+        See who is it
+      </button>
+      <div class="button-bar">
+        <button class="button button-balanced button-block" ng-click="openDoor()" ng-if="doorIsOpen != true">
+          Open door
+        </button>
+        <button class="button button-assertive button-block" ng-click="reject()" ng-if="doorIsOpen != true">
+          Reject
+        </button>
+        <div class="text-center" ng-if="doorIsOpen == true" style="width:100%">
+          <div class="ring-label">
+            Door is open
+          </div>
+          <button class="button button-positive button-block" ng-click="endCall()">
+            Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

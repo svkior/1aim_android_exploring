@@ -1,0 +1,60 @@
+<ion-view view-title="{{'ISSUE-PASS.TITLE' | translate}}" class="issue-new-pass-viewß">
+  <ion-content >
+    <div class="list">
+      <form name="form">
+        <div class="item item-divider item-button-right">
+          {{'ISSUE-PASS.USER-DETAILS' | translate}}
+          <button class="button button-positive" name="button" ng-if="canImportContact" ng-click="importContact()">{{'ISSUE-PASS.IMPORT-CONTACT' | translate}}</button>
+        </div>
+
+        <label class="item item-input item-floating-label" ng-class="{'has-error': form.fullname.$error.required}">
+          <span class="input-label">{{'ISSUE-PASS.FULL-NAME' | translate}}</span>
+          <input type="text" placeholder="{{'ISSUE-PASS.FULL-NAME' | translate}}" name="fullname" ng-model='newPassModel.name' required>
+        </label>
+
+        <label class="item item-input item-floating-label" ng-class="{'has-error': form.email.$error.email}">
+          <span class="input-label">{{'ISSUE-PASS.EMAIL' | translate}}</span>
+          <input type="email" name="email" placeholder="{{'ISSUE-PASS.EMAIL' | translate}}" ng-model='newPassModel.email' required>
+        </label>
+
+        <label class="item item-input item-floating-label">
+          <span class="input-label">{{'ISSUE-PASS.PHONE' | translate}}</span>
+          <input type="text" placeholder="{{'ISSUE-PASS.PHONE' | translate}}" ng-model='newPassModel.phone'>
+        </label>
+
+        <div class="item item-divider">
+          {{'ISSUE-PASS.PASS-DETAILS' | translate}}
+        </div>
+
+        <label class="item item-input item-floating-label">
+          <span class="input-label">{{'ISSUE-PASS.PASS-NAME' | translate}}</span>
+          <input type="text" placeholder="{{'ISSUE-PASS.PASS-NAME-PLACEHOLDER' | translate}}" ng-model='newPassModel.alias'>
+        </label>
+
+        <label class="item item-input item-floating-label" ng-class="{'has-error': form.valid-from.$error.required}">
+          <ionic-datepicker input-obj="dpStart">
+            <span class="input-label">{{'ISSUE-PASS.VALID-FROM' | translate}}</span>
+            <input type="text" placeholder="{{'ISSUE-PASS.VALID-FROM' | translate}}" name="valid-from" ng-model='newPassModel.validity.start' readonly="true" input-date-format required>
+          </ionic-datepicker>
+        </label>
+
+        <label class="item item-input item-floating-label">
+          <ionic-datepicker input-obj="dpEnd">
+            <span class="input-label">{{'ISSUE-PASS.EXPIRES' | translate}}</span>
+            <input type="text" placeholder="{{'ISSUE-PASS.EXPIRES' | translate}}" ng-model='newPassModel.validity.end' readonly="true" input-date-format required>
+          </ionic-datepicker>
+        </label>
+
+        <div class="item item-divider">
+          {{'ISSUE-PASS.PASS-PERMISSIONS' | translate}}
+        </div>
+
+        <ion-toggle ng-model="newPassModel.accountNeeded" toggle-class="toggle-balanced">{{'ISSUE-PASS.PERMANENT-PASS' | translate}}</ion-toggle>
+        <ion-toggle ng-model="newPassModel.canIssue" toggle-class="toggle-balanced">{{'ISSUE-PASS.CAN-ISSUE' | translate}}</ion-toggle>
+        <ion-toggle ng-model="newPassModel.isAdmin" toggle-class="toggle-balanced">{{'ISSUE-PASS.PASS-ADMIN' | translate}}</ion-toggle>
+
+        <button class="button button-block button-positive" ng-disabled="!form.$valid" ng-click='issuePass()'>{{'ISSUE-PASS.SUBMIT-BUTTON' | translate}}</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
